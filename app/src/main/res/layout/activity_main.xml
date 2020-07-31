@@ -7,197 +7,216 @@
 
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/mainLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
 
         <LinearLayout
-            android:id="@+id/containerOneCoffee"
+            android:id="@+id/mainLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/price_text_one"
-                android:layout_width="0dp"
+
+            <LinearLayout
+                android:id="@+id/containerOneCoffee"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="19"
-                android:padding="8dp"
-                android:text="@string/one_coffee_cost"
-                android:textSize="16sp" />
-            <TextView
-                android:id="@+id/price_text_one_view"
+                android:gravity="center|top"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/price_text_one"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="19"
+                    android:padding="8dp"
+                    android:text="@string/one_coffee_cost"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/price_text_one_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="$5"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/quantity_text_primary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:padding="8dp"
+                    android:text="@string/quantity"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|top"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <Button
+                    android:id="@+id/decrement_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:onClick="decrement"
+                    android:text="-"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/quantity_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/increment_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:onClick="increment"
+                    android:text="+"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/toppings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/toppings"
+                    android:textSize="16sp">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="$5"
-                android:textColor="#000000"
-                android:textStyle="bold|italic"
-                android:textSize="16sp" />
+                android:layout_marginTop="5dp"
+                android:gravity="left"
+                android:orientation="vertical"
+                android:paddingLeft="8dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxCream"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_cream"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxChocolate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_chocolate"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxCinnamon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_cinnamon"
+                    android:textSize="12sp" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/container1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:orientation="horizontal"
-            android:padding="8dp">
 
-            <TextView
-                android:id="@+id/quantity_text_primary"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/container4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="80"
-                android:padding="8dp"
-                android:text="@string/quantity"
-                android:textSize="16sp" />
+                android:gravity="left|top"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/price_text_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text=""
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/price_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold|italic" />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
+
         <LinearLayout
-            android:id="@+id/container3"
+            android:id="@+id/layout_order_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:padding="16dp"
+            android:layout_height="match_parent"
+            android:gravity="center|bottom"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/decrement_button"
-                android:layout_width="wrap_content"
+                android:id="@+id/reset_button"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:onClick="decrement"
-                android:text="-"
+                android:layout_marginRight="20dp"
+                android:layout_weight="50"
+                android:onClick="reset"
+                android:text="Reset"
                 android:textColor="#000000" />
-
-            <TextView
-                android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="16sp" />
 
             <Button
-                android:id="@+id/increment_button"
-                android:layout_width="wrap_content"
+                android:id="@+id/order_button"
+                android:layout_width="0dp"
                 android:layout_height="60dp"
-                android:onClick="increment"
-                android:text="+"
+                android:layout_weight="50"
+                android:onClick="submitOrder"
+                android:text="ORDER"
                 android:textColor="#000000" />
 
-
         </LinearLayout>
-
-
-
-        <LinearLayout
-            android:id="@+id/toppings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/toppings"
-                android:textSize="24sp">
-
-            </TextView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/container_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:padding="8dp">
-
-            <CheckBox
-                android:id="@+id/checkBoxCream"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/checkbox_cream"
-                android:textSize="12sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/container4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left|top"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/price_text_primary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text=""
-                android:textStyle="bold"
-                android:textSize="34sp" />
-
-            <TextView
-                android:id="@+id/price_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textStyle="bold|italic"
-                android:text=""
-                android:textColor="#000000"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:id="@+id/layout_order_button"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center|bottom"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/reset_button"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="50"
-            android:onClick="reset"
-            android:layout_marginRight="20dp"
-            android:text="Reset"
-            android:textColor="#000000" />
-
-        <Button
-            android:id="@+id/order_button"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="50"
-            android:onClick="submitOrder"
-            android:text="ORDER"
-            android:textColor="#000000" />
-
-    </LinearLayout>
 
 
 

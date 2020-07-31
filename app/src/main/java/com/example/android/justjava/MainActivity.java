@@ -20,7 +20,11 @@ public class MainActivity extends AppCompatActivity {
     Toast backToast;
     boolean hasWhippedCream;
     boolean hasCinnamon;
-
+    boolean hasChocolate;
+    String toppings = "Toppings: ";
+    String whippedCream;
+    String cinnamon;
+    String chocolate;
 
 
     @Override
@@ -42,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     //This method is called when "-" button is clicked.
     public void decrement(View view) {
-        quantity--;
+        if (quantity == 0) {
+            Toast.makeText(this, "Can't be below 0", Toast.LENGTH_SHORT).show();
+        } else {
+            quantity--;
+        }
         displayQuantity(quantity);
     }
 
@@ -51,7 +59,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         CheckBox whippedCreamCheckBox = findViewById(R.id.checkBoxCream);
+        CheckBox cinnamonCheckBox = findViewById(R.id.checkBoxCinnamon);
+        CheckBox chocolateCheckBox = findViewById(R.id.checkBoxChocolate);
         hasWhippedCream = whippedCreamCheckBox.isChecked();
+        hasCinnamon = cinnamonCheckBox.isChecked();
+        hasChocolate = chocolateCheckBox.isChecked();
+        creamCounter(hasWhippedCream);
+        chocoCounter(hasChocolate);
+        cinnCounter(hasCinnamon);
+        toppings =  whippedCream  + chocolate  + cinnamon;
         createOrderSummary(quantity, coffeePrice, customerName);
     }
 
@@ -71,6 +87,32 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
+    //counting cream, returning String
+    public void creamCounter(boolean cream) {
+        if (cream) {
+            whippedCream = "\n" + "+ Whipped Cream";
+        } else {
+            whippedCream = "";
+        }
+    }
+
+    //counting choco, returning String
+    public void chocoCounter(boolean choco) {
+        if (choco) {
+            chocolate = "\n" + "+ Chocolate";
+        } else {
+            chocolate = "";
+        }
+    }
+
+    //counting cinnamon, returning String
+    public void cinnCounter(boolean cinn) {
+        if (cinn) {
+            cinnamon = "\n" + "+ Cinnamon";
+        } else {
+            cinnamon = "";
+        }
+    }
 
     /**
      * Calculates the price of the order based on the current quantity and one cup cost
@@ -83,21 +125,21 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = findViewById(R.id.price_text_view);
         TextView orderTextView = findViewById(R.id.price_text_primary);
         int price = quantity * coffeePrice;
-        String toppings;
-        if (hasWhippedCream) {
-            toppings = "Toppings: Whipped Cream";
-        } else {
-            toppings = "Toppings: None";
-        }
+
+
+//        if (hasWhippedCream) {
+//            toppings = "Toppings: Whipped Cream";
+//        } else {
+//            toppings = "Toppings: None";
+//        }
         if (quantity == 0) {
             priceTextView.setText("");
             orderTextView.setText("");
         } else {
-            String summary = "Name: " + customerName + "\n" + "Quantity: " + quantity + "\n" + "Total, $: " + price + "\n" + toppings + "\n" + "\n" + "Thank you!";
+            String summary = "Name: " + customerName + "\n" + "Quantity of coffees: " + quantity  + toppings + "\n" + "\n" + "Total, $: " + price + "\n" + "\n" + "Thank you!";
             orderTextView.setText("Your Order:");
             priceTextView.setText(summary);
         }
-
 
 
     }
@@ -117,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         backPressedTime = System.currentTimeMillis();
     }
     //system button "back" end
+
 }
 
 

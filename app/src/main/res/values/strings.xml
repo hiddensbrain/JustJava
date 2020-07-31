@@ -2,7 +2,8 @@
     <string name="app_name">Just Java</string>
     <string name="quantity">How much coffees you want to order?</string>
     <string name="one_coffee_cost">Price for one cup:</string>
-    <string name="toppings">Toppings:</string>
+    <string name="toppings">Toppings (+1$ for each):</string>
     <string name="checkbox_cream">Whipped Cream</string>
     <string name="checkbox_cinnamon">Cinnamon</string>
+    <string name="checkbox_chocolate">Chocolate</string>
 </resources>
