@@ -13,22 +13,53 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
+        <LinearLayout
+            android:id="@+id/containerOneCoffee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/price_text_one"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="19"
+                android:padding="8dp"
+                android:text="@string/one_coffee_cost"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/price_text_one_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="$5"
+                android:textColor="#000000"
+                android:textStyle="bold|italic"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
         <LinearLayout
             android:id="@+id/container1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|top"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/quantity_text_primary"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="QUANTITY"
+                android:layout_weight="80"
+                android:padding="8dp"
+                android:text="@string/quantity"
                 android:textSize="16sp" />
-
 
         </LinearLayout>
 
@@ -68,44 +99,59 @@
 
         </LinearLayout>
 
+
+
         <LinearLayout
-            android:id="@+id/container2"
+            android:id="@+id/toppings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
-            android:orientation="horizontal">
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/price_text_one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Price for one cup"
-                android:textSize="16sp" />
+                android:text="@string/toppings"
+                android:textSize="24sp">
 
-            <TextView
-                android:id="@+id/price_text_one_view"
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/checkBoxCream"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="$5"
-                android:textColor="#000000"
-                android:textStyle="bold|italic"
-                android:textSize="16sp" />
+                android:text="@string/checkbox_cream"
+                android:textSize="12sp" />
+
+
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/container4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|top"
+            android:gravity="left|top"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/price_text_primary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:padding="8dp"
                 android:text=""
                 android:textStyle="bold"
                 android:textSize="34sp" />
@@ -114,7 +160,7 @@
                 android:id="@+id/price_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:padding="8dp"
                 android:textStyle="bold|italic"
                 android:text=""
                 android:textColor="#000000"
@@ -134,8 +180,9 @@
 
         <Button
             android:id="@+id/reset_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="50"
             android:onClick="reset"
             android:layout_marginRight="20dp"
             android:text="Reset"
@@ -143,8 +190,9 @@
 
         <Button
             android:id="@+id/order_button"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_weight="50"
             android:onClick="submitOrder"
             android:text="ORDER"
             android:textColor="#000000" />
